@@ -21,6 +21,13 @@ int main()
 
     while (WinCondition != 1)
     {
+        int a = 1;
+        int b = 2;
+        int c = 3;
+
+        int sum = a + b + c;
+        int multiple = a*b*c;
+
         ActionSelected = Message.PrintInputPromt();        
 
         switch (ActionSelected)
@@ -29,9 +36,9 @@ int main()
             Message.PrintGameRules();
             break;
         
-        //TODO: IMPLEMENT PRINTING CLUES
+        //TODO: IMPLEMENT PRINTING CLUES WITH RANDOMIZER
         case 2:        
-            Console.Print("WARNING: NOT IMPLEMENTED YET!");
+            Message.PrintClue(sum, multiple);
             Message.PrintMainMenu();
             break;
 

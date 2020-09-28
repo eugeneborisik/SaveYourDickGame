@@ -10,19 +10,16 @@ class UserInterface
     //Constructor
 public:
     UserInterface()
-    {        
+    {
         WelcomeMessage();
     }
 
     ConsoleHelper Console;
 
-
-
     //Prints some nice welcome message on game start ;)
 private:
-
     void printMessage(string message)
-    {        
+    {
         cout << message << endl;
     }
     void WelcomeMessage()
@@ -61,10 +58,17 @@ public:
         Console.Print("   4. Give up");
     }
 
+    void PrintClue(int sum, int multiple)
+    {
+        Console.Print("###CLUE###");
+        Console.Print("SUM of numbers is " + to_string(sum));
+        Console.Print("MULTIPLICATION of numbers is " + to_string(multiple));
+    }    
+
     int PrintInputPromt()
     {
         string Input = Console.GetInput("Type number of action and press Enter: ");
-        int ConvertedInput = atoi(Input.c_str());        
+        int ConvertedInput = atoi(Input.c_str());
         return ConvertedInput;
     }
 
