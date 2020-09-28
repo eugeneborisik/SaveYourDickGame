@@ -1,25 +1,25 @@
-#include <iostream>
+#include "./Support/ConsoleHelper.h"
 #include "./GameLogics/UserInterface.h"
 
 int main()
 {
     //Inheriting Messaging class from GameLogics.cpp file
     UserInterface Message;
+    ConsoleHelper Console;
 
     //GameLogics
 
     /*
-    WinCondition variable can have 3 values:
-    0 - you loose
-    1 - you proceeding
-    2 - you win 
+    WinCondition variable can have 2 values:
+    0 - for running game
+    1 - for finishing game
 
     ActionSelected is just a variable to store a value to pick Main Menu items
      */
-    int WinCondition = 1;
+    int WinCondition = 0;
     int ActionSelected;
 
-    while (WinCondition != 2 && WinCondition != 0)
+    while (WinCondition != 1)
     {
         ActionSelected = Message.PrintInputPromt();        
 
@@ -31,20 +31,20 @@ int main()
         
         //TODO: IMPLEMENT PRINTING CLUES
         case 2:        
-            cout << "WARNING: NOT IMPLEMENTED YET!" << endl;
+            Console.Print("WARNING: NOT IMPLEMENTED YET!");
             Message.PrintMainMenu();
             break;
 
         //TODO: IMPLEMENT GETTING ANSWER
         case 3:
-            cout << "WARNING: NOT IMPLEMENTED YET!" << endl;
+            Console.Print("WARNING: NOT IMPLEMENTED YET!");
             Message.PrintMainMenu();
             break;
 
         //TODO: IMPLEMENT GIVING UP
         case 4:
-            cout << "WARNING: NOT IMPLEMENTED YET!" << endl;
-            Message.PrintMainMenu();
+            WinCondition = 1;
+            Message.PrintGiveUpMessage();            
             break;
 
         default:
@@ -54,5 +54,6 @@ int main()
         }
     }
 
+    Console.PressAnyKey();
     return 0;
 }
