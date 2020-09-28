@@ -27,32 +27,68 @@ int main()
         int b = 2;
         int c = 3;
 
+        //Guess variables
+        int GuessA;
+        int GuessB;
+        int GuessC;
+
         int sum = a + b + c;
         int multiple = a*b*c;
 
-        ActionSelected = Message.PrintInputPromt();        
+        int finalSum;
+        int finalMultiple;
+
+        ActionSelected = Message.PrintInputPromt("Type number of action and press Enter: ");        
 
         switch (ActionSelected)
         {
         case 1:
             Message.PrintGameRules();
+            Message.PrintMainMenu();
             break;        
         
         case 2:        
             Message.PrintClue(sum, multiple);
             Message.PrintMainMenu();
             break;
-
-        //TODO: IMPLEMENT GETTING ANSWER
+        
         case 3:
-            Console.Print("WARNING: NOT IMPLEMENTED YET!");
-            Message.PrintMainMenu();
-            break;
+            Console.Print("###ENTER ANSWERS###");
+            Console.Print("Enter number and press Enter and proceed with rest numbers.");
+            Console.Print("Example:");
+            Console.Print("");
+            Console.Print("1");
+            Console.Print("");
+            Console.Print("1");
+            Console.Print("");
+            Console.Print("1");
+            Console.Print("You can also enter all numbers and split them with space and then press Enter");
+            Console.Print("Example: 1 1 1");
+            Console.Print("YOUR ANSWER: ");
 
-        //TODO: IMPLEMENT GIVING UP
+            GuessA = Message.PrintInputPromt("");
+            GuessB = Message.PrintInputPromt("");
+            GuessC = Message.PrintInputPromt("");
+
+            finalSum = GuessA + GuessB + GuessC;
+            finalMultiple = GuessA * GuessB * GuessC;
+
+            if (finalSum == sum && finalMultiple == multiple)
+            {
+                WinCondition = 1;
+                Message.PrintVictoryWessage();
+            }
+            else
+            {
+                WinCondition = 1;
+                Message.PrintLooseMessage();
+            }            
+
+            break;
+        
         case 4:
             WinCondition = 1;
-            Message.PrintGiveUpMessage();            
+            Message.PrintLooseMessage();            
             break;
 
         default:

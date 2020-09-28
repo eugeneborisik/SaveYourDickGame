@@ -35,11 +35,11 @@ private:
 
     void GameRules()
     {
-        Console.Print("   1. You have to guess 3 numbers in order to unlock a device on your little \"friend\"");
-        Console.Print("   2. As a clue you will have 2 numbers: ");
-        Console.Print("      - 1st number is a result of SUM of all 3 numbers to guess");
-        Console.Print("      - 2nd number is a result of MULTIPLICATION of all 3 numbers to guess");
-        Console.Print("   3. Once you found out the answer follow the instructions to enter these numbers one by one ... and pray you are right :)");
+        Console.Print("1. You have to guess 3 numbers in order to unlock a device on your little \"friend\"");
+        Console.Print("2. As a clue you will have 2 numbers: ");
+        Console.Print("   - 1st number is a result of SUM of all 3 numbers to guess");
+        Console.Print("   - 2nd number is a result of MULTIPLICATION of all 3 numbers to guess");
+        Console.Print("3. Once you found out the answer follow the instructions to enter these numbers one by one ... and pray you are right :)");
     }
 
 public:
@@ -52,10 +52,10 @@ public:
     void PrintMainMenu()
     {
         Console.Print("###ACTIONS###");
-        Console.Print("   1. Print rules");
-        Console.Print("   2. Print clues");
-        Console.Print("   3. Give answer");
-        Console.Print("   4. Give up");
+        Console.Print("1. Print rules");
+        Console.Print("2. Print clues");
+        Console.Print("3. Give answer");
+        Console.Print("4. Give up");
     }
 
     void PrintClue(int sum, int multiple)
@@ -65,9 +65,9 @@ public:
         Console.Print("MULTIPLICATION of numbers is " + to_string(multiple));
     }    
 
-    int PrintInputPromt()
+    int PrintInputPromt(string message)
     {
-        string Input = Console.GetInput("Type number of action and press Enter: ");
+        string Input = Console.GetInput(message);
         int ConvertedInput = atoi(Input.c_str());
         return ConvertedInput;
     }
@@ -77,9 +77,14 @@ public:
         Console.Print("ERROR: UNKNOWN ACTION SELECTED!");
     }
 
-    void PrintGiveUpMessage()
+    void PrintVictoryWessage()
     {
-        Console.Print("GAME OVER: FUCKIN' WEAKLING! YOU DO NOT DESERVE TO HAVE YOU COCK!!!");
+        Console.Print("CONGRATULATIONS! YOU DESERVE TO LEAVE YOUR LITTLE FRIEND WITH YOU! :)");
+    }
+
+    void PrintLooseMessage()
+    {
+        Console.Print("FUCKIN' WEAKLING! YOU DO NOT DESERVE TO HAVE YOU COCK!");
     }
 };
 
