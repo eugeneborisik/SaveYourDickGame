@@ -19,8 +19,10 @@ int main()
     int WinCondition = 0;
     int ActionSelected;
 
+    //While cycle to run the game with basic console user interface
     while (WinCondition != 1)
     {
+        //Implement randomizer
         int a = 1;
         int b = 2;
         int c = 3;
@@ -34,9 +36,8 @@ int main()
         {
         case 1:
             Message.PrintGameRules();
-            break;
+            break;        
         
-        //TODO: IMPLEMENT PRINTING CLUES WITH RANDOMIZER
         case 2:        
             Message.PrintClue(sum, multiple);
             Message.PrintMainMenu();
