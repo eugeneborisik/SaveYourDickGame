@@ -30,7 +30,6 @@ private:
         Console.Print("Rules of the game are pretty simple:");
         GameRules();
         Console.Print("Hope you get the rules, good luck :)");
-        PrintMainMenu();
     }
 
     void GameRules()
@@ -40,6 +39,7 @@ private:
         Console.Print("   - 1st number is a result of SUM of all 3 numbers to guess");
         Console.Print("   - 2nd number is a result of MULTIPLICATION of all 3 numbers to guess");
         Console.Print("3. Once you found out the answer follow the instructions to enter these numbers one by one ... and pray you are right :)");
+        Console.Print("4. You have to pass 5 levels");
     }
 
 public:
@@ -56,6 +56,11 @@ public:
         Console.Print("2. Print clues");
         Console.Print("3. Give answer");
         Console.Print("4. Give up");
+    }
+
+    void PrintLevel(int level)
+    {
+        Console.Print("You are on level " + to_string(level));
     }
 
     void PrintClue(int sum, int multiple)
