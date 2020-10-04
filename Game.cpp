@@ -8,7 +8,6 @@ int main()
     GameLogics Game;
     UserInterface Message;
     ConsoleHelper Console;
-
     
     /*
     WinCondition variable can have 2 values:

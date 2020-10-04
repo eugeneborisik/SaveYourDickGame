@@ -3,10 +3,18 @@
 
 #include <string>
 #include "./System/UserInterface.h"
-using namespace std;
+#include <ctime>
 
 class GameLogics
 {
+    //Constructor
+    //Here we get timestamp to make sure we have unique random digits
+    public:
+    GameLogics()
+    {
+        srand(time(NULL));
+    }
+
     UserInterface Message;
 
     private:
